@@ -33,6 +33,9 @@ app
           server.post('/api/user/register', UserController.register);
           server.post('/api/user/login', UserController.login);
 
+          server.get('/admin', (req, res) => {
+               app.render(req, res, '/loginAdmin')
+          });
 
           server.get("*", (req, res) => {
                return handle(req, res);
